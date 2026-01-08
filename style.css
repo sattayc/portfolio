@@ -1,127 +1,1014 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* ========= KLEUREN (OCEAN BUBBLES THEME) ========= */
+:root {
+  /* Backgrounds */
+  --bg-color: #f7fbff;                 /* zachte oceaan-wit */
+  --light-color: #ffffff;
 
+  /* Ocean section colors */
+  --ocean-bg: #81cce5;                 /* licht ocean */
+  --ocean-bg-soft: #c3ecf9;            /* extra zacht */
+  --bubble-color: rgba(255, 255, 255, 0.35);
+
+  /* Brand */
+  --primary-color: #6ed0f0;            /* link/accents */
+  --second-color: #309cc1;             /* header/footer */
+  --hover-color: #007298;              /* hover donkerder */
+
+  /* Text */
+  --dark-color: #0f172a;
+  --mid-color: rgba(15, 23, 42, 0.62);
+
+  /* UI */
+  --border-color: rgba(15, 23, 42, 0.10);
+  --shadow-color: rgba(15, 23, 42, 0.12);
+
+  /* Transparant overlay (voor hero + menu overlay) */
+  --transparant-color: rgba(43, 127, 184, 0.35);
+}
+
+/* ========= Dark mode ========= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #061327;
+    --light-color: #0b1b33;
+
+    --ocean-bg: #0b3a54;
+    --ocean-bg-soft: #0b2a45;
+    --bubble-color: rgba(255, 255, 255, 0.10);
+
+    --primary-color: #7dd3fc;
+    --second-color: #0b2a45;
+    --hover-color: #38bdf8;
+
+    --dark-color: #eaf2ff;
+    --mid-color: rgba(234, 242, 255, 0.70);
+
+    --border-color: rgba(234, 242, 255, 0.12);
+    --shadow-color: rgba(0, 0, 0, 0.55);
+
+    --transparant-color: rgba(11, 42, 69, 0.65);
+  }
+}
+
+/* ========= Hoge contrast ========= */
+@media (prefers-contrast: more) {
+  :root {
+    --bg-color: #ffffff;
+    --light-color: #ffffff;
+
+    --primary-color: #003b73;
+    --second-color: #003b73;
+    --hover-color: #001a33;
+
+    --dark-color: #000000;
+    --mid-color: #111111;
+
+    --border-color: #000000;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+
+    --transparant-color: rgba(0, 59, 115, 0.20);
+
+    --ocean-bg: #cfeaf3;
+    --ocean-bg-soft: #eaf6fb;
+    --bubble-color: rgba(255, 255, 255, 0.25);
+  }
+
+header li a, footer nav a, section a {
+    text-decoration: underline;
+  }
+}
+
+
+/* ========= REDUCE ANIMATION ========= */
+@media (prefers-reduced-motion: reduce) {
+  .index #home .hero-photo, .index #home .hero-photo::before {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========= SCROLL REVEAL ========= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* wanneer zichtbaar */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* kleine variatie (optioneel) */
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+
+/* ========= GLOBAL ========= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #f8d6e1;
-    color: #1a1a1a;
-    line-height: 1.6;
+  background-color: var(--bg-color);
 }
 
-section {
-    padding-top: 2em;
+/* skiplink */
+.skiplink { 
+  position: absolute; 
+  top: -9999px; 
+  left: 0; 
+  background: var(--dark-color); 
+  color: var(--light-color); 
+  padding: 8px; 
+  z-index: 100; 
+} 
+
+.skiplink:focus { 
+  top: 0; 
 }
 
-main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 3em auto;
-    background-color: white;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-h1, h2, h3 {
-    font-family: 'Sniglet', cursive;
-    font-weight: 500;
-    color: #a72265;
-    margin-bottom: 0.5em;
-}
-
-p, li {
-    font-size: 1em;
-    color: #333;
-}
+/* ========= HEADER / NAV ========= */
 
 header {
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    padding: 1em 2em;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  background-color: var(--hover-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  padding: 0em 2em;
+}
+
+header img { 
+  width: 50px;
+  padding: 1em 0em;
+  display: block;
+}
+
+header > nav ul li {
+  padding: 1em 1em;
+  list-style: none;
+}
+
+header li a {
+  color: var(--light-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header li a:hover {
+  color: var(--primary-color);
+}
+
+header button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  height: 1rem;
+  width: 1rem;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+header button svg {
+  height: 100%;
+  width: 100%;
+}
+
+/* MENU BUTTON VOLGORDE */
+header > button {
+  order: -1;
+}
+
+/* HET MENU (mobile overlay) */
+header > nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  translate: 100%;
+  display: none;
+}
+
+/* als het menu open is */
+header > nav.toonMenu {
+  display: block;
+  translate: 0%;
+  transition: 0.3s;
+  padding: 2em;
+  background:var(--transparant-color);
+  backdrop-filter: blur(20px);
+  background-size: 3em;
+}
+
+header > nav.toonMenu a {
+  color: var(--light-color);
+  font-size: 1.2rem;
+}
+
+header > nav.toonMenu li {
+  background-color: transparent;
+}
+
+header > nav.toonMenu rect {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  height: 0;
+  width: 0;
+  padding-top: 0;
+}
+/* ========= HERO ========= */
+
+.index #home {
+  position: relative;
+  overflow: hidden;
+
+  /* ocean achtergrond */
+  background: linear-gradient(180deg, var(--ocean-bg), var(--ocean-bg-soft), var(--bg-color));
+  padding: 6.5em 2em;
+
+  display: grid;
+  grid-template-columns: 340px minmax(320px, 760px);
+  column-gap: 3.5rem;
+  row-gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== BUBBELS (meerdere lagen) ===== */
+.index #home::before, .index #contact::before,.index #contact::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+
+  /* meerdere bubbels met radial-gradients */
+  background:
+    radial-gradient(circle at 12% 30%, rgba(255,255,255,0.28) 0 70px, transparent 72px),
+    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.18) 0 55px, transparent 57px),
+    radial-gradient(circle at 38% 20%, rgba(255,255,255,0.15) 0 40px, transparent 42px),
+    radial-gradient(circle at 60% 35%, rgba(255,255,255,0.14) 0 65px, transparent 67px),
+    radial-gradient(circle at 78% 18%, rgba(255,255,255,0.16) 0 48px, transparent 50px),
+    radial-gradient(circle at 88% 55%, rgba(255,255,255,0.12) 0 80px, transparent 82px),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.10) 0 60px, transparent 62px);
+  filter: blur(1px);
+  opacity: 0.95;
+
+  animation: bubbleFloat 2s ease-in-out infinite;
+}
+
+/* extra zachte haze laag */
+.index #home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.10), transparent 60%);
+  opacity: 0.9;
+}
+
+/* ===== FOTO ===== */
+.index #home .hero-photo {
+  grid-row: 1 / span 3;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+
+  width: 290px;
+  height: 290px;
+  border-radius: 999px;
+  overflow: hidden;
+
+  border: 5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.25);
+  animation: softFloat 9s ease-in-out infinite;
 }
 
 
-header ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    gap: 1.5em;
+.index #home .hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  filter: blur(18px);
+  z-index: -1;
+  pointer-events: none;
+  
+}
+
+.index #home .hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+}
+
+/* ===== GLASS PANEL voor LEESBAARHEID (tekst + buttons) ===== */
+.index #home h1, .index #home p, .index #home > div:last-of-type {
+  position: relative;
+  z-index: 3;
+}
+
+.index #home h1 {
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+}
+
+/* tekst in een echte card */
+.index #home p {
+  margin-top: 0.9rem;
+  max-width: 44rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+  background: rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.05rem 1.2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== BUTTONS ===== */
+.index #home > div:last-of-type {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.index #home > div:last-of-type a {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--dark-color);
+  padding: 0.7em 1.6em;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.index #home > div:last-of-type a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.22);
+  background: var(--hover-color);
+  color: var(--light-color);
+}
+
+.index #home > div:last-of-type a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.95);
+  outline-offset: 4px;
+}
+
+/* ===== ANIMATIES ===== */
+@keyframes softFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+
+/* ========= PORTFOLIO (SECTION 2) ========= */
+
+.index section:nth-of-type(2) h2 {
+  padding: 1.5em 0 0.5em;
+  color: var(--dark-color);
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 800;
+}
+
+.index section:nth-of-type(2) h3 {
+  padding-top: 1em;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  text-align: center;
+} 
+
+.index section:nth-of-type(2) p {
+  text-align: center;
+  font-size: 1rem;
+} 
+
+/* Portfolio grid container – alleen de wrapper-div in #portfolio */
+.index #portfolio > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  place-items: center;
+  margin: 1.5em;
+}
+
+/* Elk projectkaartje */
+.index #portfolio article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  min-height: 320px;
+}
+
+/* Afbeelding in kaartje */
+.index #portfolio article img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px var(--shadow-color);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.index #portfolio article img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px var(--primary-color);
+}
+
+/* ========= ABOUT ME (SECTION 3) ========= */
+
+.index #aboutme {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+/* De hele kaart */
+.index #aboutme article {
+  background-color: var(--light-color);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px var(--shadow-color);
+  margin: 2em 1.5em;
+  max-width: 1100px;
+  width: 100%;
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Titel in de kaart */
+.index #aboutme article > h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark-color);
+  margin-bottom: .5rem;
+}
+
+/* Eerste blok: foto + lange tekst */
+.index #aboutme article > div:first-of-type {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Foto */
+.index #aboutme article img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 400px;
+  object-fit: cover;
+}
+
+/* Intro-tekst naast de foto */
+.index #aboutme .about-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dark-color);
+}
+
+/* wrapper */
+.about-text {
+  position: relative;
+}
+
+/* standaard: volledige tekst zichtbaar (desktop) */
+.about-text p {
+  margin-bottom: 0.5rem;
+}
+
+/* Education timeline */
+
+.index #aboutme #education {
+  list-style: none;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.index #aboutme #education li {
+  position: relative;
+}
+
+/* bolletje op de lijn */
+.index #aboutme #education li::before {
+  content: "";
+  position: absolute;
+  left: -1.05rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* eerste regel: datum */
+.index #aboutme #education li p:first-of-type {
+  font-weight: 600;
+  color: var(--mid-color);
+  margin-bottom: 0.15rem;
+}
+
+/* schoolnaam */
+.index #aboutme #education h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+
+/* beschrijving (laatste p) */
+.index #aboutme #education li p:last-of-type {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Soft & Hard skills naast elkaar */
+
+.index #aboutme article .skills-wrapper {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.index #aboutme article .skills-column {
+  flex: 1;
+}
+
+.index #aboutme ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ========= CONTACT SECTION ========= */
+.index #contact {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-color), var(--light-color), var(--ocean-bg-soft), var(--ocean-bg));
+  padding: 6.5em 2em;
+}
+
+/* titel + tekst */
+.index #contact h2, .index #contact > p  {
+  margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 900;
+  color:var(--second-color);
+  text-shadow: 0 10px 25px rgba(27, 100, 145, 0.35);
+}
+
+.index #contact > p  {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+/* ========= CONTACT CARD ========= */
+.index #contact-card {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 2.4rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+  background: rgba(39, 171, 207, 0.455);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.05rem 1.2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+/* kleine bubble-glow achter de card */
+.index #contact-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -90px;
+  right: -90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* rijen (label links, waarde rechts) */
+.index #contact-card p {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.95rem 0;
+}
+
+.index #contact-card p + p {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* labels */
+.index #contact-card strong {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--light-color);
+}
+
+/* links */
+.index #contact-card a {
+  color: var(--light-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.index #contact-card a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+/* ========= SUBTIELE BUBBEL ANIMATIE (OPTIONEEL) ========= */
+@keyframes bubbleFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.index #contact::before {
+  animation: bubbleFloat 10s ease-in-out infinite;
+}
+
+.index #contact::after {
+  animation: bubbleFloat 14s ease-in-out infinite;
+}
+
+/* ========= FOOTER ========= */
+
+footer {
+  background-color: var(--hover-color);
+  padding: 1em;
+}
+
+footer > p {
+  color: var(--light-color);
+  text-align: left;
+  font-size: 1rem;
+}
+
+/* ========== PROJECTPAGINA ========== */
+
+body.project {
+    background-color: var(--bg-color);
+  }
+  
+  .project main {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  /* Hero-afbeelding */
+  .project .project-hero img {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px var(--shadow-color);
+  }
+  
+  /* Titel + button */
+  .project .project-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .project .project-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--dark-color);
+  }
+  
+  .project .project-header .project-subtitle {
+    font-size: 1.1rem;
+    color: var(--mid-color);
+    margin: .5rem 0 1.5rem;
+  }
+  
+  /* Link button naar werk */
+  .project .project-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
     font-weight: 700;
-    font-size: 1.1em;
-}
-
-a {
     text-decoration: none;
-    color: #1a1a1a;
-    display: inline-block; 
-    transition: 0.3s ease;
-}
-
-header a:hover, a:hover {
-    color:  #db9cff;
-    transform: scale(1.1);
-}
-
-.currentpage {
-    color: #a72265;
-}
-
-img {
-    width: 250px; 
-    height: 250px; 
-    max-width: 100%; 
-    border-radius: 10px;
-    object-fit: cover; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.flex-horizontaal {
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    margin-bottom: 2em;
-}
-
-.flex-column {
+    box-shadow: 0 12px 30px var(--shadow-color);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  
+  .project .project-link:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px var(--shadow-color);
+  }
+  
+  /* Hoofd-layout: tekst + details */
+  .project .project-layout {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  
+  .project .project-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+    color: var(--dark-color);
+  }
+  
+  .project .project-text p {
+    line-height: 1.8;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Meta blok rechts */
+  .project .project-meta {
+    background-color: var(--light-color);
+    border-radius: 20px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 12px 30px var(--shadow-color);
+  }
+  
+  .project .project-meta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+  }
+  
+  .project .project-meta ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.flex-column ul {
-    list-style-type: none;
-}
-
-.flex-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2em;
-    margin-top: 2em;
-}
-
-.contact-knop {
-    display: inline-block;
-    margin-top: 1em;
-    padding: 0.75em 1.5em;
-    border-radius: 10px;
-    border: none;
-    background-color: #ffccdd;
-    color: #a72265;
-    font-weight: bold;
-    transition: 0.3s ease;
+    gap: .75rem;
+  }
+  
+  .project .project-meta li span {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--mid-color);
+  }
+  
+  .project .project-meta li strong {
+    display: block;
+    font-size: .98rem;
+    color: var(--dark-color);
+  }
+  
+  /* Gallery */
+  .project .project-gallery {
+    margin-bottom: 3rem;
+  }
+  
+  .project .project-gallery h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+  }
+  
+  .project .project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project .project-gallery-grid img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px var(--shadow-color);
+  }
+  
+  /* Terug-link */
+  .project .project-back {
     text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .project .project-back a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  
+  .project .project-back a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .project main {
+      padding: 1.5rem 1rem 3rem;
+    }
+  
+    .project .project-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .project .project-meta {
+      margin-top: .5rem;
+    }
+  
+    .project .project-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+
+/* ========= RESPONSIVE ========= */
+
+/* kleiner dan 1000px */
+@media (max-width: 1000px) {
+  .index #home {
+    grid-template-columns: 1fr;
+    padding: 5.5em 1.5em;
+    text-align: center;
+  }
+
+  .index #home .hero-photo {
+    grid-row: auto;
+  }
+
+  .index #home h1, .index #home p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .index #home > div:last-of-type {
+    justify-content: center;
+  }
+
+  .index #home::before {
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 480px;
+  }
+
+  .index #home::after {
+    right: -260px;
+    top: -260px;
+  }
+
+  .index #portfolio > div {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .index #portfolio article {
+    min-height: 200px;
+  }
+
+  .index #portfolio article img {
+    max-width: 220px;
+  }
+
+  .index #aboutme article .skills-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .index #aboutme article > div:first-of-type {
+    flex-direction: column;
+  }
+
+  .index section:nth-of-type(2) {
+    padding: 0 1.5rem;
+  }
+
+  .about-text p {
+    max-height: 7em;     
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .about-text p.expanded {
+    max-height: 100vh;        /* openklappen */
+  }
+
+  .read-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .index #contact-card a {
+  text-decoration: underline;
+  }
 }
 
-.contact-knop:hover {
-    background-color: #db9cff;
-    color: white;
+/* groter dan 1000px */
+@media (min-width: 1000px) {
+  header > button {
+    display: none;
+  }
+  
+  header > nav {
+    position: static;
+    translate: unset;
+    background: none;
+    display: block;
+  }
+  
+  header > nav button {
+    display: none;
+  }
+  
+  header > nav ul {
+    display: flex;
+    gap: 1em; 
+  }
+  
+  header > nav a {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+  
+  header > a:last-of-type {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .read-more-btn {
+    display: none;
+  }
 }

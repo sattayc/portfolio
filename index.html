@@ -1,96 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyathida's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="index">
     <header>
+        <!-- skip link https://www.gxsoftware.com/nl/blog/zo-zet-je-skiplinks-in-op-je-website -->
+        <a href="#main-content" class="skiplink">Naar hoofdinhoud</a>
+        <!-- Logo -->
+        <a href="./index.html">
+          <img src="images/logo-cartoon.png" alt="homepagina">
+        </a>
+      <!-- Eigen hamburger button -->
+        <button aria-hidden="true">
+          <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+          <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g>
+          <path id="Vector" d="M3 15H21M3 9H21" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          </svg>
+        </button>
+
+      <!-- Nav -->
         <nav>
+          <button aria-label="Sluit menu">
+            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" fill="white"/>
+            <path d="M7 17L16.8995 7.10051" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 7.00001L16.8995 16.8995" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
           <ul>
-            <li>
-              <a href="index.html" class="currentpage">Home</a>
-            </li>
-            <li>
-              <a href="over-mij.html">Over mij</a>
-            </li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-      </header>
-  
-      <main>
-        <section>
-          <h1>Hoi! Ik ben Piyathida, welkom op mijn online portfolio!</h1>
-          <p>
-            Ik ben een eerstejaars student Communication and Multimedia Design aan de Hogeschool van Amsterdam. Op deze website laat ik je zien wat ik tot nu toe heb gemaakt. 
-            Je vindt hier verschillende projecten die ik in mijn eerste jaar heb gedaan. Elk project is een combinatie van mijn creatieve ideeën en de nieuwe dingen die ik leer.
-          </p>
-          <p>
-            Bekijk mijn werk en ontdek wat ik allemaal heb ontworpen!
-          </p>
-        </section>
-        <section>
-            <h2>Mijn werk in het eerste jaar</h2>
-            <article class="flex-horizontaal">
-                <img src="img/og-mu.jpg" alt="Ontwerpgeschiedenis mockup">
-                <a href="./pdf/OntwerpgeschiedenisSketchbook-CartoonSattayarangsan.pdf">
-                    Ontwerpgeschiedenis: Sketchnotes maken van podcast luisteren
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/hci-mu.png" alt="HCI mockup">
-                <a href="./pdf/Design With Dakine-Cartoon Sattayarangsan-Klas Roze-Versie 06-10-24.pdf">
-                    HCI: Dakine rugzak website
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/vg-mu.jpg" alt="Vormgeving mockup">
-                <a href="https://www.figma.com/proto/rGR6SEYMHlBuhvFAFmfdc8/design-rational?page-id=0%3A1&node-id=39-2&p=f&viewport=-343%2C267%2C0.3&t=YcdlL2vdZRDjWf2a-1&scaling=min-zoom&content-scaling=fixed">
-                    Vormgeving: Cocktailbar one pager in eigen stijl
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/con-mu.png" alt="Content mockup">
-                <a href="https://www.figma.com/proto/RxnW7Fbn7CglN8PTH9tMcH/Tuktuktalk?page-id=0%3A1&node-id=1-2&t=58Ect3G51k4OUNiK-1">
-                    Content: Prototypen maken van podcast website “Tuktuk Talk”
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/int-mu.png" alt="Internetstandaarden mockup">
-                <a href="https://sattayc.github.io/internetstandaarden-tuktuktalk/">
-                    Internetstandaarden: Programmeren van podcast website “Tuktuk talk”
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/ip-mu.png" alt="Inleidingprogrammeren mockup">
-                <a href="https://sattayc.github.io/hoppo/">
-                    Inleidingprogrammeren: Game maken met Javascript
-                </a>
-            </article>
-        </section>
+    </header>
 
-        <section>
-            <h2>Projecten in het eerste jaar</h2>
-            <article class="flex-horizontaal">
-                <img src="img/pt1-mu.jpg" alt="Project team 1 mockup">
-                <a href="https://www.figma.com/proto/tdjVgxL2yZyGgQ98hCMFyU/Kook-Kompas?page-id=0%3A1&node-id=530-794&p=f&viewport=190%2C180%2C0.04&t=cARXntrRFI0ITHIt-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=530%3A794">
-                    Project Team 1 Heel Holland Kookt: Prototype een recepten app ontwerpen
-                </a>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/pi1-mu.jpg" alt="Project Individueel 1 mockup">
-                <a href="https://sattayc.github.io/blij-ologisch/">
-                    Project Individueel 1 De Lieve Groene Stad: Programmeren een website over een initiatief in Amsterdam voor telefoon
-                </span>
-            </article>
-            <article class="flex-horizontaal">
-                <img src="img/pt2-mu.jpg" alt="Project team 2 mockup">
-                <a href="./pdf/Prototypes.pdf">
-                    Project Team 2 Het Passie Project: Fysieke prototypen maken in het Makerslab
-                </a>
-            </article>
-        </section>
+    <main id="main-content">
+    <!-- home section -->
+    <section id="home">
+      <div class="hero-photo">
+        <img src="images/profiel.jpg" alt="profiel foto van Piyathida">
+      </div>
+      <h1>Piyathida Sattayarangsan</h1>
+      <p>Hi! I'm Piyathida, a second-year Communication and Multimedia Design student, working as both a UX/UI designer and a front-end developer.
+        On this website, I’ll show you what I’ve created so far. You’ll find different projects I’ve worked on during my studies, 
+        each one combining my creativity with the new skills I’m developing.</p>
+      <div>
+        <a href="#aboutme">About me</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <!-- portfolio section -->
+    <section id="portfolio">
+      <h2>Projects I have worked on</h2>
+      <div class="reveal">
+        <article>
+          <a href="1.html"><img src="images/dakine.png" alt="dakine website image"></a>
+          <div>
+            <h3>Dakine backpack website</h3>
+            <p>Design (Adobe Illustrator)</p>
+          </div>
+          
+        </article>
+
+        <article>
+          <a href="2.html"><img src="images/vormgeving.png" alt="cocktail bar onepager image"></a>
+          <div>
+            <h3>Cocktail bar one-pager in my own style</h3>
+            <p>Design (Figma)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="3.html"><img src="images/content.png" alt="tuktuktalk website image"></a>
+          <div>
+            <h3>Tuktuk Talk - a podcast website</h3>
+            <p>Prototype (Figma)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="4.html"><img src="images/tuktuk.png" alt="tuktuktalk website image"></a>
+          <div>
+            <h3>Tuktuk Talk - a podcast website</h3>
+            <p>Coded (HTML & CSS)</p>
+          </div>
+        </article>
+        
+        <article>
+          <a href="5.html"><img src="images/hoppo.png" alt="Hoppo game image"></a>
+          <div>
+            <h3>Hoppo - building a game with JavaScript</h3>
+            <p>Coded (HTML, CSS and JavaScript)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="6.html"><img src="images/kook.png" alt="Kook kompas app image"></a>
+          <div>
+            <h3>Kook kompas - a recipe-app prototype</h3>
+            <p>Prototype (Figma)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="7.html"><img src="images/blijo.png" alt="Blij-ologisch image"></a>
+          <div>
+            <h3>Blij-ologisch - a website for an initiative in Amsterdam</h3>
+            <p>Prototype (Figma) & Coded (HTML, CSS)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="8.html"><img src="images/morath.png" alt="marath's vervuiling image"></a>
+          <div>
+            <h3>Morath's vervuiling - a physical boardgame</h3>
+            <p>Physical prototype (Makerslab)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="9.html"><img src="images/vid.png" alt="Bookfinder tablet image"></a>
+          <div>
+            <h3>Boeken Zoeker - a bookfinder</h3>
+            <p>Prototype (Figma)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="10.html"><img src="images/cmdraw.png" alt="CMDraw app image"></a>
+          <div>
+            <h3>CMDraw - an app for CMD students who love drawing</h3>
+            <p>Prototype (Figma)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="11.html"><img src="images/dunkin.png" alt="Dunkin website image"></a>
+          <div>
+            <h3>Dunkin’ Responsive Website Redesign</h3>
+            <p>Coded (HTML, CSS and JavaScript)</p>
+          </div>
+        </article>
+
+        <article>
+          <a href="12.html"><img src="images/rmdd.png" alt="WattUp image"></a>
+          <div>
+            <h3>WattUp - Energy-Saving platform</h3>
+            <p>Design (Figma)</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- about me section -->
+    <section id="aboutme" class="reveal">
+
+      <article>
+        <h2>About me</h2>
+        <div class="about-wrapper">
+          <img src="images/profiel2.jpg" alt="image of me">
+
+          <div class="about-text">
+            <p>
+              I'm Piyathida, an aspiring UX/UI designer and front-end developer.
+              I’m a motivated learner with a passion for creating clear, intuitive and meaningful digital experiences.
+              I’m currently in my second year of Communication and Multimedia Design at the Amsterdam University of Applied Sciences (HvA), where I completed my first year Cum Laude. Throughout my studies, 
+              I’ve worked on a variety of projects ranging from designing interactive Figma prototypes to developing fully coded websites.
+              I’m a friendly and outgoing person who enjoys collaborating with others, while also being comfortable taking initiative and working independently. 
+              I love exploring new ideas, expanding my skills, and pushing myself to grow. I’m always open to opportunities where I can contribute, apply my creativity, and further develop my abilities.
+            </p>
+
+           <button type="button" class="read-more-btn" aria-expanded="false">Lees meer</button>
+          
+          </div>
+        </div>
+    
+        <h3>Education</h3>
+
+        <ul id="education">
+          <li>
+            <p>September 2024 – present</p>
+            <h4>Amsterdam University of Applied Sciences (HvA)</h4>
+            <p>Communication and Multimedia Design (Full-time Bachelor's programme)</p>
+          </li>
+
+          <li>
+            <p>September 2023 – July 2024</p>
+            <h4>VAVO Lyceum Utrecht</h4>
+            <p>HAVO Nature & Technology profile, with Informatics and Art as additional subjects</p>
+          </li>
+
+          <li>
+            <p>September 2020 – July 2023</p>
+            <h4>Alberdingk Thijm College</h4>
+            <p>HAVO Nature & Technology profile, with Informatics and Art as additional subjects</p>
+          </li>
+        </ul>
+
+
+        <div class="skills-wrapper">
+
+          <div class="skills-column">
+            <h3>Soft skills</h3>
+            <ul>
+              <li>Honest and open-minded</li>
+              <li>Good at solving problems</li>
+              <li>Creative thinker</li>
+              <li>Flexible and adaptable</li>
+            </ul>
+          </div>
+        
+          <div class="skills-column">
+            <h3>Hard skills</h3>
+            <ul>
+              <li>Figma</li>
+              <li>HTML, CSS and JavaScript</li>
+              <li>Adobe Illustrator / Photoshop</li>
+              <li>Procreate</li>
+            </ul>
+          </div>
+        
+        </div>
+        
+      </article> 
+    
+    </section>
+
+    <!-- contact section -->
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <p>Let's get in touch!</p>
+    
+      <div id="contact-card">
+        <p><strong>Email</strong> <a href="mailto:cartoonctps@gmail.com">cartoonctps@gmail.com</a></p>
+        <p><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/piyathida-sattayarangsan" target="_blank">Piyathida Sattayarangsan</a></p>
+        <p><strong>Instagram</strong> <a href="https://www.instagram.com/c_cartoonn" target="_blank">@c_cartoonn</a></p>
+      </div>
+    </section>
+    
+
+  </main>
+
+  <footer>
+    <p>© 2025 Piyathida Sattayarangsan</p>
+  </footer>
+
+  <script src="script.js"></script>
+  
 </body>
 </html>

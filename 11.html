@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dunkin’ Responsive Website Redesign</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="project">
+  <header>
+    <!-- zelfde header als je homepagina -->
+    <a href="./index.html">
+      <img src="images/logo-cartoon.png" alt="homepagina">
+    </a>
+
+    <!-- hamburger button + nav zoals op je index -->
+    <button aria-hidden="true">
+      <!-- jouw svg -->
+    </button>
+
+    <nav>
+      <button aria-label="Sluit menu">
+        <!-- jouw close svg -->
+      </button>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#aboutme">About Me</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="project-hero">
+      <img src="images/dunkin.png" alt="Dunkin responsive redesign">
+    </section>
+
+    <!-- TITLE + SUBTITLE -->
+    <section class="project-header">
+      <h1>Dunkin’ Responsive Website Redesign</h1>
+      <p class="project-subtitle">Frontend Development</p>
+       <!-- eventueel later prototype link toevoegen -->
+       <a class="project-link" href="https://sattayc.github.io/dunkin/" target="_blank" rel="noopener">
+        View prototype ↗
+      </a>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="project-layout">
+      
+      <div class="project-text">
+        <h2>About this project</h2>
+
+        <p>
+          For the course Frontend Development, I redesigned and rebuilt 
+          the Dunkin’ website with a strong focus on responsive design. 
+          The goal was to make the pages fully adaptable from mobile screen size 
+          up to laptop screens, improving the structure and usability of the original site.
+        </p>
+
+        <p>
+          I created two pages: a Home page and an About Us page, and developed them using 
+          HTML, CSS, and basic JavaScrip. One of the biggest challenges 
+          was that I was instructed to use no classes or as few as possible, 
+          which pushed me to write clean semantic HTML and rely on element-based styling.
+        </p>
+
+        <p>
+          During this project I also experimented with:
+          <ul>
+            <li>Dark mode</li>
+            <li>High contrast mode</li>
+            <li>A hamburger menu built with JavaScript</li>
+            <li>Small UI animations</li>
+          </ul>
+          This assignment helped me grow significantly as a frontend developer and deepened my
+          understanding of responsive behaviour and accessibility.
+        </p>
+      </div>
+
+      <div class="project-meta">
+        <h3>Project details</h3>
+        <ul>
+          <li>
+            <span>Course</span>
+            <strong>Frontend Development</strong>
+          </li>
+          <li>
+            <span>Period</span>
+            <strong>Block 1 – 2025</strong>
+          </li>
+          <li>
+            <span>Role</span>
+            <strong>Frontend Developer</strong>
+          </li>
+          <li>
+            <span>Tools</span>
+            <strong>HTML, CSS, JavaScript</strong>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="project-gallery">
+      <h2>Preview</h2>
+      <div class="project-gallery-grid">
+        <img src="images/dunkin1.jpg" alt="Dunkin page preview 1">
+        <img src="images/dunkin2.jpg" alt="Dunkin page preview 2">
+      </div>
+    </section>
+
+    <!-- BACK BUTTON -->
+    <section class="project-back">
+      <a href="index.html#portfolio">← Back to portfolio</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Piyathida Sattayarangsan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
