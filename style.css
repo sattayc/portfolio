@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* ========= KLEUREN (OCEAN BUBBLES THEME) ========= */
 :root {
   /* Backgrounds */
@@ -151,7 +156,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 9999;
-  padding: 0em 2em;
+  padding: 0em 1em;
 }
 
 header img { 
@@ -211,7 +216,8 @@ header > nav.toonMenu {
   display: block;
   translate: 0%;
   transition: 0.3s;
-  padding: 2em;
+  padding: 1em;
+  padding-top: 2em;
   background:var(--transparant-color);
   backdrop-filter: blur(20px);
   background-size: 3em;
@@ -663,7 +669,7 @@ header > nav.toonMenu rect {
 
 /* labels */
 .index #contact-card strong {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
   color: var(--light-color);
 }
@@ -672,7 +678,7 @@ header > nav.toonMenu rect {
 .index #contact-card a {
   color: var(--light-color);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -1010,5 +1016,9 @@ body.project {
 
   .read-more-btn {
     display: none;
+  }
+
+  .index #contact-card strong, .index #contact-card a {
+    font-size: 1.2rem;
   }
 }
