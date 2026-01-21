@@ -4,21 +4,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ========= KLEUREN (OCEAN BUBBLES THEME) ========= */
+/* ========= KLEUREN ========= */
 :root {
   /* Backgrounds */
-  --bg-color: #f7fbff;                 /* zachte oceaan-wit */
+  --bg-color: #f7fbff;                 
   --light-color: #ffffff;
 
   /* Ocean section colors */
-  --ocean-bg: #81cce5;                 /* licht ocean */
-  --ocean-bg-soft: #c3ecf9;            /* extra zacht */
+  --ocean-bg: #81cce5;                 
+  --ocean-bg-soft: #c3ecf9;           
   --bubble-color: rgba(255, 255, 255, 0.35);
 
   /* Brand */
-  --primary-color: #6ed0f0;            /* link/accents */
-  --second-color: #309cc1;             /* header/footer */
-  --hover-color: #007298;              /* hover donkerder */
+  --primary-color: #6ed0f0;            
+  --second-color: #309cc1;             
+  --hover-color: #007298;              
 
   /* Text */
   --dark-color: #0f172a;
@@ -30,58 +30,6 @@ html {
 
   /* Transparant overlay (voor hero + menu overlay) */
   --transparant-color: rgba(43, 127, 184, 0.35);
-}
-
-/* ========= Dark mode ========= */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #061327;
-    --light-color: #0b1b33;
-
-    --ocean-bg: #0b3a54;
-    --ocean-bg-soft: #0b2a45;
-    --bubble-color: rgba(255, 255, 255, 0.10);
-
-    --primary-color: #7dd3fc;
-    --second-color: #0b2a45;
-    --hover-color: #38bdf8;
-
-    --dark-color: #eaf2ff;
-    --mid-color: rgba(234, 242, 255, 0.70);
-
-    --border-color: rgba(234, 242, 255, 0.12);
-    --shadow-color: rgba(0, 0, 0, 0.55);
-
-    --transparant-color: rgba(11, 42, 69, 0.65);
-  }
-}
-
-/* ========= Hoge contrast ========= */
-@media (prefers-contrast: more) {
-  :root {
-    --bg-color: #ffffff;
-    --light-color: #ffffff;
-
-    --primary-color: #003b73;
-    --second-color: #003b73;
-    --hover-color: #001a33;
-
-    --dark-color: #000000;
-    --mid-color: #111111;
-
-    --border-color: #000000;
-    --shadow-color: rgba(0, 0, 0, 0.35);
-
-    --transparant-color: rgba(0, 59, 115, 0.20);
-
-    --ocean-bg: #cfeaf3;
-    --ocean-bg-soft: #eaf6fb;
-    --bubble-color: rgba(255, 255, 255, 0.25);
-  }
-
-header li a, footer nav a, section a {
-    text-decoration: underline;
-  }
 }
 
 
@@ -246,7 +194,6 @@ header > nav.toonMenu rect {
   position: relative;
   overflow: hidden;
 
-  /* ocean achtergrond */
   background: linear-gradient(180deg, var(--ocean-bg), var(--ocean-bg-soft), var(--bg-color));
   padding: 6.5em 2em;
 
@@ -280,7 +227,6 @@ header > nav.toonMenu rect {
   animation: bubbleFloat 2s ease-in-out infinite;
 }
 
-/* extra zachte haze laag */
 .index #home::after {
   content: "";
   position: absolute;
@@ -290,7 +236,6 @@ header > nav.toonMenu rect {
   opacity: 0.9;
 }
 
-/* ===== FOTO ===== */
 .index #home .hero-photo {
   grid-row: 1 / span 3;
   justify-self: center;
@@ -327,7 +272,6 @@ header > nav.toonMenu rect {
   transform: scale(1.03);
 }
 
-/* ===== GLASS PANEL voor LEESBAARHEID (tekst + buttons) ===== */
 .index #home h1, .index #home p, .index #home > div:last-of-type {
   position: relative;
   z-index: 3;
@@ -341,7 +285,6 @@ header > nav.toonMenu rect {
   text-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
 }
 
-/* tekst in een echte card */
 .index #home p {
   margin-top: 0.9rem;
   max-width: 44rem;
@@ -430,7 +373,6 @@ header > nav.toonMenu rect {
   font-size: 1rem;
 } 
 
-/* Portfolio grid container – alleen de wrapper-div in #portfolio */
 .index #portfolio > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -439,7 +381,6 @@ header > nav.toonMenu rect {
   margin: 1.5em;
 }
 
-/* Elk projectkaartje */
 .index #portfolio article {
   display: flex;
   flex-direction: column;
@@ -450,7 +391,6 @@ header > nav.toonMenu rect {
   min-height: 320px;
 }
 
-/* Afbeelding in kaartje */
 .index #portfolio article img {
   max-width: 300px;
   height: auto;
@@ -473,7 +413,6 @@ header > nav.toonMenu rect {
   padding-top: 1rem;
 }
 
-/* De hele kaart */
 .index #aboutme article {
   background-color: var(--light-color);
   border-radius: 24px;
@@ -487,7 +426,6 @@ header > nav.toonMenu rect {
   gap: 1.5rem;
 }
 
-/* Titel in de kaart */
 .index #aboutme article > h2 {
   font-size: 2rem;
   font-weight: 800;
@@ -495,39 +433,32 @@ header > nav.toonMenu rect {
   margin-bottom: .5rem;
 }
 
-/* Eerste blok: foto + lange tekst */
 .index #aboutme article > div:first-of-type {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
 }
 
-/* Foto */
 .index #aboutme article img {
   width: 200px;
-  max-width: 100%;
-  border-radius: 400px;
+  height: 200px;
+  border-radius: 100%;
   object-fit: cover;
 }
 
-/* Intro-tekst naast de foto */
 .index #aboutme .about-text {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--dark-color);
 }
 
-/* wrapper */
 .about-text {
   position: relative;
 }
 
-/* standaard: volledige tekst zichtbaar (desktop) */
 .about-text p {
   margin-bottom: 0.5rem;
 }
-
-/* Education timeline */
 
 .index #aboutme #education {
   list-style: none;
@@ -543,7 +474,6 @@ header > nav.toonMenu rect {
   position: relative;
 }
 
-/* bolletje op de lijn */
 .index #aboutme #education li::before {
   content: "";
   position: absolute;
@@ -555,28 +485,24 @@ header > nav.toonMenu rect {
   border-radius: 50%;
 }
 
-/* eerste regel: datum */
 .index #aboutme #education li p:first-of-type {
   font-weight: 600;
   color: var(--mid-color);
   margin-bottom: 0.15rem;
 }
 
-/* schoolnaam */
 .index #aboutme #education h4 {
   font-size: 1.1rem;
   font-weight: 800;
   margin-bottom: 0.15rem;
 }
 
-/* beschrijving (laatste p) */
 .index #aboutme #education li p:last-of-type {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* Soft & Hard skills naast elkaar */
 
 .index #aboutme article .skills-wrapper {
   display: flex;
@@ -594,6 +520,16 @@ header > nav.toonMenu rect {
   padding-left: 0;
 }
 
+.skills-column svg{
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* ========= CONTACT SECTION ========= */
 .index #contact {
   position: relative;
@@ -603,8 +539,7 @@ header > nav.toonMenu rect {
   padding: 6.5em 2em;
 }
 
-/* titel + tekst */
-.index #contact h2, .index #contact > p  {
+.index #contact h2 {
   margin-bottom: 0.6rem;
   position: relative;
   z-index: 1;
@@ -615,91 +550,175 @@ header > nav.toonMenu rect {
   text-shadow: 0 10px 25px rgba(27, 100, 145, 0.35);
 }
 
-.index #contact > p  {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-
-/* ========= CONTACT CARD ========= */
-.index #contact-card {
+.contact-card{
   position: relative;
   z-index: 1;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 2rem 2.4rem;
-  text-align: left;
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
-  background: rgba(39, 171, 207, 0.455);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 1.05rem 1.2rem;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
-}
+  max-width: 980px;
+  margin: 2.2rem auto 0;
+  padding: 2.2rem 2.4rem;
 
-/* kleine bubble-glow achter de card */
-.index #contact-card::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  top: -90px;
-  right: -90px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  filter: blur(14px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* rijen (label links, waarde rechts) */
-.index #contact-card p {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 0.8rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
   align-items: center;
-  margin: 0;
-  padding: 0.95rem 0;
+
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 26px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 26px 70px rgba(15,23,42,0.14);
+  overflow: hidden;
 }
 
-.index #contact-card p + p {
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+.contact-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(110,208,240,0.55), rgba(48,156,193,0.35));
+  clip-path: polygon(0 0, 36% 0, 18% 100%, 0 100%);
+  opacity: 0.95;
+  pointer-events:none;
 }
 
-/* labels */
-.index #contact-card strong {
-  font-size: 1rem;
+.contact-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(110,208,240,0.18) 0 110px, transparent 112px),
+    radial-gradient(circle at 88% 70%, rgba(48,156,193,0.14) 0 140px, transparent 142px);
+  pointer-events:none;
+}
+
+.card-left, .card-right{
+  position: relative;
+  z-index: 1;
+}
+
+.card-left{
+  text-align: left;
+}
+
+.card-left h3{
+  font-size: 2rem;
   font-weight: 900;
-  color: var(--light-color);
+  color: var(--dark-color);
+  margin-bottom: .2rem;
 }
 
-/* links */
-.index #contact-card a {
-  color: var(--light-color);
-  font-weight: 600;
-  font-size: 1rem;
+.card-sub{
+  color: var(--mid-color);
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+
+.card-info{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .9rem;
+}
+
+.card-info li{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: .9rem;
+  align-items: center;
+
+  padding: .7rem .85rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(15,23,42,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-info li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15,23,42,0.10);
+}
+
+.card-info a{
+  color: var(--dark-color);
+  font-weight: 800;
   text-decoration: none;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.index #contact-card a:hover {
+.card-info a:hover{
   color: var(--hover-color);
   text-decoration: underline;
 }
-/* ========= SUBTIELE BUBBEL ANIMATIE (OPTIONEEL) ========= */
-@keyframes bubbleFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+
+.card-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--hover-color);
+  box-shadow: 0 10px 25px rgba(15,23,42,0.12);
 }
 
-.index #contact::before {
-  animation: bubbleFloat 10s ease-in-out infinite;
+.card-icon svg{
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.index #contact::after {
-  animation: bubbleFloat 14s ease-in-out infinite;
+.card-right{
+  display: grid;
+  justify-items: center;
+  gap: .9rem;
+}
+
+.card-photo img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,0.95);
+  box-shadow: 0 18px 45px rgba(15,23,42,0.18);
+}
+
+.card-id{
+  text-align: center;
+}
+
+.card-id .name{
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--dark-color);
+}
+
+.card-id .role{
+  margin-top: .2rem;
+  font-weight: 700;
+  color: var(--mid-color);
+}
+
+.index #contact::before, .index #contact::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+
+  /* meerdere bubbels met radial-gradients */
+  background:
+    radial-gradient(circle at 12% 30%, rgba(255,255,255,0.28) 0 70px, transparent 72px),
+    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.18) 0 55px, transparent 57px),
+    radial-gradient(circle at 38% 20%, rgba(255,255,255,0.15) 0 40px, transparent 42px),
+    radial-gradient(circle at 60% 35%, rgba(255,255,255,0.14) 0 65px, transparent 67px),
+    radial-gradient(circle at 78% 18%, rgba(255,255,255,0.16) 0 48px, transparent 50px),
+    radial-gradient(circle at 88% 55%, rgba(255,255,255,0.12) 0 80px, transparent 82px),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.10) 0 60px, transparent 62px);
+  filter: blur(1px);
+  opacity: 0.95;
+
+  animation: bubbleFloat 2s ease-in-out infinite;
 }
 
 /* ========= FOOTER ========= */
@@ -981,8 +1000,25 @@ body.project {
     font-size: 1rem;
   }
 
-  .index #contact-card a {
-  text-decoration: underline;
+  .contact-card{
+    grid-template-columns: 1fr;
+    padding: 1.8rem 1.4rem;
+    gap: 1.4rem;
+  }
+
+  .contact-card::before{
+    clip-path: polygon(0 0, 100% 0, 100% 28%, 0 55%);
+    opacity: 0.55;
+  }
+
+  .card-left{
+    text-align: center;
+  }
+
+  .card-info li{
+    grid-template-columns: 44px 1fr;
+    text-align: left;
+  
   }
 }
 
