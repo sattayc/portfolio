@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btn.addEventListener("click", () => {
       const expanded = text.classList.toggle("expanded");
-      btn.textContent = expanded ? "Lees minder" : "Lees meer";
+      btn.textContent = expanded ? "Read less" : "Read more";
       btn.setAttribute("aria-expanded", expanded);
     });
   }

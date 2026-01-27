@@ -353,7 +353,7 @@ header > nav.toonMenu rect {
 
 /* ========= PORTFOLIO (SECTION 2) ========= */
 
-.index section:nth-of-type(2) h2 {
+.index h2 {
   padding: 1.5em 0 0.5em;
   color: var(--dark-color);
   font-size: 2rem;
@@ -378,7 +378,7 @@ header > nav.toonMenu rect {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   place-items: center;
-  margin: 1.5em;
+  margin: 2em;
 }
 
 .index #portfolio article {
@@ -431,6 +431,7 @@ header > nav.toonMenu rect {
   font-weight: 800;
   color: var(--dark-color);
   margin-bottom: .5rem;
+  text-align: left;
 }
 
 .index #aboutme article > div:first-of-type {
@@ -808,7 +809,7 @@ body.project {
     color: var(--dark-color);
   }
   
-  .project .project-text p {
+  p {
     line-height: 1.8;
     color: var(--dark-color);
     margin-bottom: 1rem;
@@ -860,11 +861,16 @@ body.project {
     margin-bottom: 1rem;
     color: var(--dark-color);
   }
+
+   .project .project-gallery h3 {
+    margin-top: 1rem;
+  }
   
   .project .project-gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
+    margin-bottom: 1em;
   }
   
   .project .project-gallery-grid img {
@@ -872,6 +878,13 @@ body.project {
     border-radius: 18px;
     box-shadow: 0 12px 30px var(--shadow-color);
   }
+
+  .discription {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  
   
   /* Terug-link */
   .project .project-back {
@@ -980,6 +993,10 @@ body.project {
     padding: 0 1.5rem;
   }
 
+  .index h2, .index #aboutme article > h2 {
+    font-size: 1.5em;
+  }
+
   .about-text p {
     max-height: 7em;     
     overflow: hidden;
@@ -1019,6 +1036,12 @@ body.project {
     grid-template-columns: 44px 1fr;
     text-align: left;
   
+  }
+
+  .project .project-gallery-grid img {
+    width: 80%;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px var(--shadow-color);
   }
 }
 
