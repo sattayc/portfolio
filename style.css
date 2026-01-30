@@ -1038,7 +1038,7 @@ body.project {
   
   }
 
-  .project .project-gallery-grid img {
+  .project .project-gallery-grid img, .project .project-gallery img {
     width: 80%;
     border-radius: 18px;
     box-shadow: 0 12px 30px var(--shadow-color);
